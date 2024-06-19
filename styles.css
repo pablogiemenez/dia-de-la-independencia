@@ -1,0 +1,109 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Cambiado de height a min-height */
+    background-color: #f0f0f0;
+    margin: 0;
+    background-image: url('ep15.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.container {
+    text-align: center;
+    background-color: transparent; /* Fondo transparente */
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 1200px;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.game-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#word-search-container {
+    display: grid;
+    grid-template-columns: repeat(10, 30px); /* Asegura 10 columnas de 30px */
+    gap: 2px;
+    margin-bottom: 20px;
+}
+
+.cell {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 255, 0.7); /* Fondo azul más vivo y semi-transparente */
+    color: white;
+    cursor: pointer;
+    user-select: none;
+    border-radius: 5px;
+}
+
+.cell.selected {
+    background-color: rgba(255, 99, 71, 0.7); /* Fondo semi-transparente */
+}
+
+.cell.correct {
+    background-color: rgba(40, 167, 69, 0.7); /* Fondo semi-transparente */
+}
+
+#words-container {
+    text-align: left;
+    margin-top: 20px;
+}
+
+#word-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+#word-list li {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+#word-list li.found {
+    text-decoration: line-through;
+    color: #28a745;
+}
+
+.btn {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px 20px;
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+.btn:hover {
+    background-color: #218838;
+}
+
+/* Media query para pantallas más pequeñas */
+@media (max-width: 600px) {
+    .game-container {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #word-search-container {
+        grid-template-columns: repeat(10, 1fr); /* Cambia a columnas flexibles */
+    }
+}
